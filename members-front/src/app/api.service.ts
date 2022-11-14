@@ -12,12 +12,16 @@ export class ApiService {
 
   getAllMembers() : Observable<any> {
     return this.http.get(this.baseUrl + 'members/',
-    {headers: this.httpHeaders})
-  }
+    {headers: this.httpHeaders});
+  };
 
   getMember(id: any) : Observable<any> {
     return this.http.get(this.baseUrl + 'members/' + id + '/',
-    {headers: this.httpHeaders})
-  }
+    {headers: this.httpHeaders});
+  };
 
+  saveNewMember(member: any) : Observable<any> {
+    return this.http.post(this.baseUrl + 'members/', member,
+    {headers: this.httpHeaders});
+  };
 }

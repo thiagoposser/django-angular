@@ -15,4 +15,15 @@ export class ApiService {
     {headers: this.httpHeaders})
   }
 
+  updateMember(member: any) : Observable<any> {
+    let body = { name: member.name, surname: member.surname, phone: member.phone, email: member.email };
+    return this.http.put(this.baseUrl + 'members/' + member.id + '/', body,
+    {headers: this.httpHeaders})
+  }
+
+  deleteMember(id: any) : Observable<any> {
+    return this.http.delete(this.baseUrl + 'members/' + id + '/',
+    {headers: this.httpHeaders})
+  }
+
 }

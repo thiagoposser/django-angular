@@ -1,1 +1,14 @@
 Membro carregado {{ selected_member.name }} {{ selected_member.surname }}
+
+<p>
+    id = {{ selectedId }}
+</p>
+
+<input type="text" [(ngModel)]="selectedId">
+<input type="text" [(ngModel)]="selected_member.name">
+<input type="text" [(ngModel)]="selected_member.surname">
+<button (click)="update()"> update </button>
+
+<button (click)="deleteM()"> delete </button>
+
+<button (click)="newMember()">Novo</button>
